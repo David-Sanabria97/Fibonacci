@@ -19,7 +19,7 @@ const Fibonacci = ({ semiX, semiY, number }) => {
 
 	return (
 		<Grid container spacing={2} padding={'0 8rem '}>
-			{result?.map((i) => {
+			{result?.reverse().map((i) => {
 				return (
 					<Grid item xs={6} md={4} lg={2}>
 						{i}
