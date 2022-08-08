@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button } from '@mui/material';
+import { Stack, Button, Typography } from '@mui/material';
 import Fibonacci from '../fibonacci';
 
 let hour = '00';
@@ -29,12 +29,23 @@ const Clock = () => {
 	setTimeout(uploadTime, 1000);
 
 	return (
-		<Box>
-			{hour < 10 ? '0' + hour : hour}: {min < 10 ? '0' + min : min}:{' '}
-			{sec < 10 ? '0' + sec : sec}
+		<Stack
+			sx={{
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				gap: '2rem',
+				margin: '3rem',
+			}}
+		>
+			<Stack sx={{ sx: { fontSize: '12rem' } }}>
+				{hour < 10 ? '0' + hour : hour}: {min < 10 ? '0' + min : min}:
+				{sec < 10 ? '0' + sec : sec}
+			</Stack>
+
 			<Button onClick={getTime}> Generar Fibonacci</Button>
 			<Fibonacci semiX={semiX} semiY={semiY} number={number} />
-		</Box>
+		</Stack>
 	);
 };
 export default Clock;

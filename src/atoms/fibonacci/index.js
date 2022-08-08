@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+import { Grid } from '@mui/material';
 
 const Fibonacci = ({ semiX, semiY, number }) => {
 	let semillaX = semiX;
@@ -18,11 +18,15 @@ const Fibonacci = ({ semiX, semiY, number }) => {
 	generateFibonaci();
 
 	return (
-		<>
+		<Grid container spacing={2} padding={'0 8rem '}>
 			{result?.map((i) => {
-				return <Box>{i}</Box>;
+				return (
+					<Grid item xs={6} md={4} lg={2}>
+						{i}
+					</Grid>
+				);
 			})}
-		</>
+		</Grid>
 	);
 };
 
