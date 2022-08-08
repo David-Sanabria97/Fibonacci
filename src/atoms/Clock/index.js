@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Stack, Button, Typography } from '@mui/material';
+import { Stack, Button } from '@mui/material';
 import Fibonacci from '../fibonacci';
 
 let hour = '00';
@@ -38,7 +38,7 @@ const Clock = () => {
 				margin: '3rem',
 			}}
 		>
-			<Stack sx={{ sx: { fontSize: '12rem' } }}>
+			<Stack fontSize={{ xs: '2rem', md: '4rem', lg: '6rem' }}>
 				{hour < 10 ? '0' + hour : hour}: {min < 10 ? '0' + min : min}:
 				{sec < 10 ? '0' + sec : sec}
 			</Stack>
